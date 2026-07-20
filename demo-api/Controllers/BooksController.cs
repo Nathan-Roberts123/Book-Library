@@ -10,6 +10,7 @@ using System.Runtime;
 
 namespace demo_api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class BooksController : ControllerBase
@@ -77,6 +78,7 @@ namespace demo_api.Controllers
             {
                 var dto = new BookResponseDto
                 {
+                    Id = book.Id,
                     Title = book.Title,
                     Author = book.Author,
                     YearPublished = book.YearPublished
@@ -106,6 +108,7 @@ namespace demo_api.Controllers
 
             BookResponseDto responseBook = new BookResponseDto
             {
+                Id = book.Id,
                 Title = book.Title,
                 Author = book.Author,
                 YearPublished = book.YearPublished,
@@ -160,7 +163,7 @@ namespace demo_api.Controllers
 
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok(book);
         }
 
         [HttpDelete("{id}")]
@@ -177,7 +180,7 @@ namespace demo_api.Controllers
             _context.Books.Remove(book);
             await _context.SaveChangesAsync();
 
-            return NoContent();
+            return Ok();
         }
     }
 }

@@ -10,6 +10,15 @@ export default function Sidebar() {
   const activeClass = "bg-blue-50 text-blue-600 font-medium";
   const inactiveClass = "hover:bg-gray-100";
 
+  const handleLogout = () => {
+    localStorage.removeItem("accessToken");
+    localStorage.removeItem("idToken");
+    localStorage.removeItem("refreshToken");
+    localStorage.removeItem("username");
+
+    navigate("/auth/signin");
+  };
+
   return (
     <aside className="w-72 border-r bg-white flex flex-col justify-between">
       <div>
@@ -55,7 +64,10 @@ export default function Sidebar() {
         <div>
           <p className="text-sm">user@example.com</p>
 
-          <button className="text-blue-600 mt-1 hover:bg-gray-100">
+          <button
+            onClick={handleLogout}
+            className="text-blue-600 mt-1 hover:underline"
+          >
             Sign Out
           </button>
         </div>

@@ -1,8 +1,13 @@
 import { useRef, useState } from "react";
 import { FiArrowLeft, FiBook, FiImage, FiUpload } from "react-icons/fi";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const BookForm = () => {
+  const navigate = useNavigate();
+  // Get the token out of storage
+  const token = localStorage.getItem("accessToken");
+
   const [book, setBook] = useState({
     title: "",
     author: "",
@@ -45,11 +50,46 @@ const BookForm = () => {
     e.preventDefault();
   }
 
-  function submit(e) {
+  async function submit(e) {
     e.preventDefault();
 
-    console.log(book);
-    console.log(cover);
+    // 1. Initialize FormData object
+    const formData = new FormData();
+
+    formData.append("Title", book.title);
+    formData.append("Author", book.author);
+    formData.append("YearPublished", book.year);
+
+    if (cover) {
+      formData.append("Poster", cover.file);
+    }
+
+    try {
+      // 3. Send POST request
+      const response = await fetch(
+        "https://cd4u4zcxfw35tzjy5a3bwhhchy0jgzpw.lambda-url.us-east-1.on.aws/api/books",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          method: "POST",
+          body: formData, // Do NOT set 'Content-Type' header; the browser will set it automatically with the boundary line
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error("Failed to create book");
+      }
+
+      const newBook = await response.json();
+      navigate(`/books/${newBook.id}`);
+
+      // Optional: Clear form on success
+      setBook({ title: "", author: "", year: "" });
+      setCover(null);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
   }
 
   return (

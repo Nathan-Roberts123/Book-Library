@@ -8,8 +8,8 @@ using System.Text;
 
 namespace demo_api.Controllers
 {
-    [ApiController]
     [Route("api/[controller]")]
+    [ApiController]
     public class AuthController : Controller
     {
         private readonly IAmazonCognitoIdentityProvider _cognito;

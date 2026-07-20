@@ -1,6 +1,8 @@
-import { FiEdit, FiTrash } from "react-icons/fi";
+import { FiEdit, FiTrash, FiExternalLink } from "react-icons/fi";
+import { useNavigate } from "react-router-dom";
 
 export default function BookTable({ books }) {
+  const navigate = useNavigate();
   return (
     <div className="overflow-hidden rounded-2xl border bg-white shadow-sm">
       <table className="w-full">
@@ -19,7 +21,7 @@ export default function BookTable({ books }) {
             <tr key={book.id} className="border-b last:border-none">
               <td className="p-6">
                 <img
-                  src={book.cover}
+                  src={book.posterUrl}
                   alt={book.title}
                   className="h-28 rounded-lg object-cover"
                 />
@@ -29,18 +31,24 @@ export default function BookTable({ books }) {
 
               <td>{book.author}</td>
 
-              <td>{book.year}</td>
+              <td>{book.yearPublished}</td>
 
               <td>
                 <div className="flex gap-3">
-                  <button className="rounded-lg border border-blue-500 px-4 py-2 text-blue-600 hover:bg-blue-50 flex items-center gap-2">
-                    <FiEdit />
-                    Edit
+                  <button
+                    onClick={() => navigate(`${book.id}`)}
+                    className="rounded-lg border border-blue-500 px-4 py-2 text-blue-600 hover:bg-blue-50 flex items-center gap-2"
+                  >
+                    <FiExternalLink />
+                    View
                   </button>
 
-                  <button className="rounded-lg border border-red-500 px-4 py-2 text-red-500 hover:bg-red-50 flex items-center gap-2">
-                    <FiTrash />
-                    Delete
+                  <button
+                    onClick={() => navigate(`${book.id}/edit`)}
+                    className="rounded-lg border border-blue-500 px-4 py-2 text-blue-600 hover:bg-blue-50 flex items-center gap-2"
+                  >
+                    <FiEdit />
+                    Edit
                   </button>
                 </div>
               </td>

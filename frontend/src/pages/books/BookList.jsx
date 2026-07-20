@@ -1,12 +1,51 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FiPlus, FiSearch } from "react-icons/fi";
 import BookTable from "../../components/BookTable";
-import { books as bookData } from "../../data/books";
 
 export default function BookList() {
+  const [books, setBooks] = useState([]);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
+
   const [search, setSearch] = useState("");
 
-  const filteredBooks = bookData.filter(
+  const getBooks = async () => {
+    // Get the token out of storage
+    const token = localStorage.getItem("accessToken");
+
+    try {
+      const response = await fetch(
+        "https://cd4u4zcxfw35tzjy5a3bwhhchy0jgzpw.lambda-url.us-east-1.on.aws/api/books",
+        {
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      } else if (response.status === 401) {
+        console.log("Token expired or unauthorized!");
+        // This is where you would use the refreshToken to get a new accessToken
+      }
+
+      const data = await response.json();
+
+      setBooks(data);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  useEffect(() => {
+    getBooks();
+  }, []);
+
+  const filteredBooks = books.filter(
     (book) =>
       book.title.toLowerCase().includes(search.toLowerCase()) ||
       book.author.toLowerCase().includes(search.toLowerCase()),
@@ -38,7 +77,7 @@ export default function BookList() {
       </div>
 
       <div className="mt-8">
-        <BookTable books={filteredBooks} />
+        {loading ? <p>Loading Books</p> : <BookTable books={filteredBooks} />}
       </div>
     </>
   );

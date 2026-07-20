@@ -1,12 +1,187 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\Coding - 2\\C#\\demo-api\\",
-  "Documents": [],
+  "WorkspaceRootPath": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\models\\bookresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:models\\bookresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\demo-api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:demo-api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\models\\bookcreationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:models\\bookcreationdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\data\\demoapicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:data\\demoapicontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|c:\\users\\user\\desktop\\coding - 2\\c-sharp\\book-library\\demo-api\\jwtbearerconfigureoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B0314596-8889-4DDE-8C92-453A2C0990F3}|demo-api.csproj|solutionrelative:jwtbearerconfigureoptions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Book.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Models\\Book.cs",
+              "RelativeToolTip": "Models\\Book.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwQAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-19T18:48:56.233Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookCreationDto.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Models\\BookCreationDto.cs",
+              "RelativeDocumentMoniker": "Models\\BookCreationDto.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Models\\BookCreationDto.cs",
+              "RelativeToolTip": "Models\\BookCreationDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-19T19:01:20.854Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BookResponseDto.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Models\\BookResponseDto.cs",
+              "RelativeDocumentMoniker": "Models\\BookResponseDto.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Models\\BookResponseDto.cs",
+              "RelativeToolTip": "Models\\BookResponseDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-19T19:00:51.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "demo-api.http",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\demo-api.http",
+              "RelativeDocumentMoniker": "demo-api.http",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\demo-api.http",
+              "RelativeToolTip": "demo-api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-07-19T11:53:48.569Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T08:39:08.961Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-07-18T08:17:24.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Controllers\\BooksController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T08:16:14.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DemoAPIContext.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Data\\DemoAPIContext.cs",
+              "RelativeDocumentMoniker": "Data\\DemoAPIContext.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Data\\DemoAPIContext.cs",
+              "RelativeToolTip": "Data\\DemoAPIContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T09:30:24.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAIoAAAAAAAAAAAAAAJgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-16T17:56:06.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "JwtBearerConfigureOptions.cs",
+              "DocumentMoniker": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\JwtBearerConfigureOptions.cs",
+              "RelativeDocumentMoniker": "JwtBearerConfigureOptions.cs",
+              "ToolTip": "C:\\Users\\USER\\Desktop\\Coding - 2\\C-Sharp\\Book-Library\\demo-api\\JwtBearerConfigureOptions.cs",
+              "RelativeToolTip": "JwtBearerConfigureOptions.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-07-18T08:36:56.134Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
