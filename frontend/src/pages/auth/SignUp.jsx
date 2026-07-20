@@ -7,69 +7,7 @@ export default function SignUp() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gray-50 flex">
-      {/* Left Side */}
-      <div className="hidden lg:flex lg:w-2/5 bg-gradient-to-br from-blue-50 to-white border-r p-14 flex-col justify-between">
-        <div>
-          {/* Logo */}
-          <div className="flex items-center gap-3">
-            <FiBookOpen className="text-blue-600 text-3xl" />
-            <h1 className="text-3xl font-bold text-gray-900">Book Library</h1>
-          </div>
-
-          {/* Heading */}
-          <div className="mt-20">
-            <h2 className="text-5xl font-bold text-gray-900 leading-tight">
-              Create Your Account
-            </h2>
-
-            <p className="mt-6 text-2xl text-gray-600 leading-relaxed max-w-md">
-              Join Book Library and start organizing and managing your book
-              collection effortlessly.
-            </p>
-          </div>
-        </div>
-
-        {/* Features */}
-        <div>
-          <Feature
-            icon={<FiBookOpen />}
-            title="Organize Your Books"
-            subtitle="Add, edit and keep your collection up to date."
-            bg="bg-blue-100"
-            color="text-blue-600"
-          />
-
-          <Feature
-            icon={<FiShield />}
-            title="Secure & Private"
-            subtitle="Your data is safe and secure with us."
-            bg="bg-green-100"
-            color="text-green-600"
-          />
-
-          <Feature
-            icon={<FiCloud />}
-            title="Access Anywhere"
-            subtitle="Manage your library from any device."
-            bg="bg-purple-100"
-            color="text-purple-600"
-          />
-
-          <div className="mt-10 text-lg">
-            <span className="text-gray-600">Already have an account?</span>
-
-            <button
-              onClick={() => navigate("/auth/signin")}
-              className="ml-3 text-blue-600 font-semibold hover:underline"
-            >
-              Sign in
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Right Side */}
+    <div className="">
       <div className="flex-1 flex items-center justify-center p-8">
         <div className="w-full max-w-4xl bg-white rounded-3xl shadow-lg border p-10">
           <h2 className="text-5xl font-bold text-gray-900">

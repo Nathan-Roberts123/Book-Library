@@ -1,5 +1,6 @@
 import { FiBook, FiPlusCircle, FiInfo } from "react-icons/fi";
 import { useNavigate, useLocation } from "react-router-dom";
+import { isAuthenticated } from "./auth/authUtils";
 
 export default function Sidebar() {
   const navigate = useNavigate();
@@ -62,14 +63,21 @@ export default function Sidebar() {
         </div>
 
         <div>
-          <p className="text-sm">user@example.com</p>
-
-          <button
-            onClick={handleLogout}
-            className="text-blue-600 mt-1 hover:underline"
-          >
-            Sign Out
-          </button>
+          {!isAuthenticated() ? (
+            <button
+              onClick={() => navigate("/auth/signin")}
+              className="text-blue-600 mt-1 hover:underline"
+            >
+              Sign In
+            </button>
+          ) : (
+            <button
+              onClick={handleLogout}
+              className="text-blue-600 mt-1 hover:underline"
+            >
+              Sign Out
+            </button>
+          )}
         </div>
       </div>
     </aside>

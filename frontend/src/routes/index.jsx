@@ -16,6 +16,7 @@ import ProtectedRoute from "../components/auth/ProtectedRoute";
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <RootLayout />,
     children: [
       {
         index: true,
@@ -23,7 +24,6 @@ const router = createBrowserRouter([
       },
       {
         path: "books",
-        element: <RootLayout />,
         children: [
           {
             index: true,
