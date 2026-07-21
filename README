@@ -1,32 +1,26 @@
-# 📚 Book Library
+📚 Book Library
 
-[![Framework](https://shields.io)](https://microsoft.com)
-[![Frontend](https://shields.io)](https://react.dev)
-[![Cloud](https://shields.io)](https://amazon.com)
+A full-stack Book Library application for managing a personal collection of books. Users can securely sign up and sign in, browse their book collection, add new books, update existing books, delete books, and upload book cover images.
 
-A comprehensive full-stack Book Library application designed to manage a personal book collection. Users can securely authenticate, browse, add, update, and delete book records while seamlessly uploading and hosting book cover images.
+The application is built with a React frontend and an ASP.NET Core 8 Web API, with AWS Cognito handling authentication and Amazon S3 providing object storage for book cover images.
 
-The architecture comprises a **React 19** frontend and an **ASP.NET Core 8 Web API** backend. User identity management is powered by **AWS Cognito**, and book cover assets are hosted securely via **Amazon S3**.
-
----
-
-## ✨ Features
-
-* **Secure Authentication:** Complete user registration, sign-in, and sign-out pipelines.
-* **Token Management:** Implements access token refresh and secure server-side token revocation.
-* **Full CRUD Operations:** View, search, browse, create, edit, and delete books in the repository.
-* **S3 Media Storage:** Dedicated upload engine for book covers routed straight to Amazon S3.
-* **Pre-signed Access:** Generates temporary, secure S3 pre-signed URLs to display private objects.
-* **Protected Endpoints:** JWT Bearer authentication safeguards all core book API controllers.
-* **Persistent Storage:** Relational book metadata mapping managed via Entity Framework Core.
-* **API Documentation:** Built-in interactive API discovery interface via Swagger/OpenAPI.
-* **Serverless Ready:** Configured out-of-the-box for serverless deployments on AWS Lambda.
-
----
-
-## 🏗️ Architecture
-
-```text
+✨ Features
+🔐 User registration and authentication
+🔄 Access token refresh
+🚪 Secure sign-out and token revocation
+📚 View all books
+🔍 Search and browse books
+➕ Add new books
+✏️ Edit existing books
+🗑️ Delete books
+🖼️ Upload book cover images
+☁️ Store book covers in Amazon S3
+🔗 Generate temporary S3 pre-signed URLs for book covers
+🛡️ Protect book endpoints with JWT authentication
+🗄️ Store book information in SQL Server
+📖 Swagger/OpenAPI API documentation
+⚡ AWS Lambda-compatible ASP.NET Core API
+🏗️ Architecture
 ┌───────────────────────────────┐
 │        React Frontend         │
 │                               │
@@ -45,9 +39,9 @@ The architecture comprises a **React 19** frontend and an **ASP.NET Core 8 Web A
 │  JWT Authentication           │
 │  Entity Framework Core        │
 └───────┬───────────────┬───────┘
-                │               │
-                │               │
-                ▼               ▼
+        │               │
+        │               │
+        ▼               ▼
 ┌───────────────┐  ┌────────────────┐
 │  SQL Server   │  │  Amazon S3     │
 │               │  │                │
@@ -63,213 +57,377 @@ The architecture comprises a **React 19** frontend and an **ASP.NET Core 8 Web A
                  │              │
                  │ User Pool    │
                  └──────────────┘
-```
-
----
-
-## 🛠️ Tech Stack
-
-### Frontend
-* **Core:** React 19, Vite
-* **Routing:** React Router
-* **Styling:** Tailwind CSS
-* **Icons:** React Icons, Lucide React
-* **Utilities:** JWT Decode
-
-### Backend
-* **Core:** .NET 8, ASP.NET Core Web API
-* **ORM:** Entity Framework Core 8
-* **Database:** SQL Server
-* **Security:** JWT Bearer Authentication
-* **Specification:** Swagger / OpenAPI
-
-### AWS Infrastructure
-* **AWS Cognito:** Handles registration, tokens, and revocation.
-* **Amazon S3:** Scalable cloud object storage for cover art.
-* **AWS Lambda:** Native serverless API hosting compatibility.
-
----
-
-## 📁 Project Structure
-
-```text
+🛠️ Tech Stack
+Frontend
+React 19
+Vite
+React Router
+Tailwind CSS
+React Icons
+Lucide React
+JWT Decode
+Backend
+.NET 8
+ASP.NET Core Web API
+Entity Framework Core 8
+SQL Server
+JWT Bearer Authentication
+Swagger / OpenAPI
+AWS Services
+AWS Cognito
+User registration
+User authentication
+Access and refresh tokens
+Token revocation
+Amazon S3
+Book cover image storage
+Pre-signed URLs
+AWS Lambda
+Serverless hosting support for the ASP.NET Core API
+📁 Project Structure
 Book-Library/
 │
-├── demo-api/                               # ASP.NET Core 8 Web API
+├── demo-api/
 │   ├── Controllers/
 │   │   ├── AuthController.cs
 │   │   ├── BooksController.cs
 │   │   └── WeatherForecastController.cs
+│   │
 │   ├── Data/
 │   │   └── DemoAPIContext.cs
-│   ├── Migrations/                         # EF Core Database Migrations
-│   ├── Models/                             # DTOs and Database Entities
+│   │
+│   ├── Migrations/
+│   │
+│   ├── Models/
 │   │   ├── Book.cs
 │   │   ├── BookCreationDto.cs
-│   │   └── [Other DTOs...]
+│   │   ├── BookResponseDto.cs
+│   │   ├── RefreshTokenDto.cs
+│   │   ├── SignInRequestDto.cs
+│   │   ├── SignOutDto.cs
+│   │   └── SignUpRequestDto.cs
+│   │
 │   ├── JwtBearerConfigureOptions.cs
 │   ├── S3Settings.cs
 │   ├── Program.cs
-│   └── appsettings.json
+│   ├── appsettings.json
+│   └── demo-api.csproj
 │
-└── frontend/                               # React UI Application
+└── frontend/
     ├── public/
+    │
     └── src/
-        ├── components/                     # Shared UI Components (Auth, Tables, Forms)
-        ├── hooks/                          # Reusable React Hooks (useBook.js)
-        ├── layouts/                        # Application Master Pages (RootLayout.jsx)
-        ├── pages/                          # Routed View Views (Auth, Books)
-        ├── routes/                         # Centralized Application Router Map
-        ├── data/                           
+        ├── components/
+        │   ├── auth/
+        │   ├── BookDetails/
+        │   ├── BookForm.jsx
+        │   ├── BookTable.jsx
+        │   ├── EditForm.jsx
+        │   ├── SearchBar.jsx
+        │   ├── Sidebar.jsx
+        │   └── SortDropdown.jsx
+        │
+        ├── hooks/
+        │   └── useBook.js
+        │
+        ├── layouts/
+        │   └── RootLayout.jsx
+        │
+        ├── pages/
+        │   ├── auth/
+        │   └── books/
+        │
+        ├── routes/
+        │   └── index.jsx
+        │
+        ├── data/
+        │   └── books.js
+        │
         ├── index.css
         └── main.jsx
-```
+        │
+        ├── package.json
+        └── vite.config.js
+🚀 Getting Started
+Prerequisites
 
----
+Make sure you have the following installed:
 
-## 🚀 Getting Started
+.NET 8 SDK
+Node.js
+SQL Server
+An AWS account
+An AWS Cognito User Pool
+An Amazon S3 bucket
 
-### Prerequisites
+You will also need AWS credentials configured locally if you are running the API outside AWS.
 
-Ensure the following environments are configured on your workstation:
-* **Runtime:** [.NET 8 SDK](https://microsoft.com) and [Node.js](https://nodejs.org)
-* **Database:** SQL Server (LocalDB or Docker instance)
-* **Cloud:** Active AWS Account with a configured Cognito User Pool and an S3 Bucket.
-* **CLI Environment:** Configured AWS local credentials profile matching your deployment environment.
+🔧 Backend Setup
 
----
+Navigate to the API directory:
 
-### 🔧 Backend Setup
+cd demo-api
 
-1. **Navigate to the API folder:**
-   ```bash
-   cd demo-api
-   ```
+Restore the .NET dependencies:
 
-2. **Restore project dependencies:**
-   ```bash
-   dotnet restore
-   ```
+dotnet restore
+Configure SQL Server
 
-3. **Configure Settings (`appsettings.json`):**
-   Update your database, storage, and identity server values:
-   ```json
-   {
-     "ConnectionStrings": {
-       "DefaultConnection": "YOUR_SQL_SERVER_CONNECTION_STRING"
-     },
-     "S3Settings": {
-       "Region": "us-east-1",
-       "BucketName": "YOUR_S3_BUCKET_NAME"
-     },
-     "JwtBearer": {
-       "Authority": "YOUR_COGNITO_ISSUER",
-       "MetadataAddress": "YOUR_COGNITO_OPENID_CONFIGURATION_URL"
-     },
-     "AWS": {
-       "Cognito": {
-         "ClientId": "YOUR_COGNITO_CLIENT_ID",
-         "ClientSecret": "YOUR_COGNITO_CLIENT_SECRET"
-      }
-     }
-   }
-   ```
-   > ⚠️ **Security Warning:** Never commit operational credentials, client secrets, or connection strings to source control. Use Environment Variables or .NET User Secrets for local development.
+Update the connection string in appsettings.json:
 
-4. **Initialize the Database:**
-   Apply migrations to generate your tables:
-   ```bash
-   dotnet ef database update
-   ```
-   *If the tools are missing, install them globally via:* `dotnet tool install --global dotnet-ef`
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "YOUR_SQL_SERVER_CONNECTION_STRING"
+  }
+}
+Configure AWS S3
 
-5. **Fire up the engine:**
-   ```bash
-   dotnet run
-   ```
-   *Swagger interface will be reachable at the endpoint outputted in your console during startup.*
+Configure your S3 bucket:
 
----
+{
+  "S3Settings": {
+    "Region": "us-east-1",
+    "BucketName": "YOUR_S3_BUCKET_NAME"
+  }
+}
 
-### 🎨 Frontend Setup
+The API stores uploaded book covers in S3 and saves the corresponding S3 object key in the database.
 
-1. **Navigate to the frontend folder:**
-   ```bash
-   cd ../frontend
-   ```
+Book cover images are returned to the frontend through temporary pre-signed URLs.
 
-2. **Install project dependencies:**
-   ```bash
-   npm install
-   ```
+Configure AWS Cognito
 
-3. **Launch the development server:**
-   ```bash
-   npm run dev
-   ```
+Configure your Cognito User Pool and App Client:
 
-#### Available Run Scripts
-* `npm run dev` - Boots the Vite local developer instance.
-* `npm run build` - Compiles production assets into `/dist`.
-* `npm run preview` - Runs a local server against your production build assets.
-* `npm run lint` - Code quality analysis via ESLint rules.
+{
+  "JwtBearer": {
+    "Authority": "YOUR_COGNITO_ISSUER",
+    "MetadataAddress": "YOUR_COGNITO_OPENID_CONFIGURATION_URL"
+  },
+  "AWS": {
+    "Cognito": {
+      "ClientId": "YOUR_COGNITO_CLIENT_ID",
+      "ClientSecret": "YOUR_COGNITO_CLIENT_SECRET"
+    }
+  }
+}
 
----
+Important: Never commit real AWS credentials, Cognito client secrets, database passwords, or other sensitive configuration values to source control.
 
-## 🔐 Authentication Flow
+For local development, consider using user secrets, environment variables, or another secure secrets management solution.
 
-```text
-User ──► React Frontend ──► ASP.NET Core API ──► AWS Cognito
-           (Sign In)       (/api/auth/signin)     (Issues Tokens)
-```
+Run Database Migrations
 
-1. **Handshake:** The frontend dispatches user credentials to `/api/auth/signin`.
-2. **Verification:** The API validates credentials against the **AWS Cognito User Pool**.
-3. **Session:** The API returns standard JWT keys to the client.
-4. **Authorized Calls:** The frontend appends the token to all stateful actions:
-   ```http
-   Authorization: Bearer <access-token>
-   ```
+Apply the Entity Framework Core migrations:
 
----
+dotnet ef database update
 
-## 📚 API Endpoints
+If the EF Core CLI tool is not installed:
 
-### Identity Management
+dotnet tool install --global dotnet-ef
+Run the API
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| **POST** | `/api/auth/signup` | Registers a new user account |
-| **POST** | `/api/auth/signin` | Signs in a user and issues JWT tokens |
-| **POST** | `/api/auth/refresh` | Evaluates and refreshes expired access tokens |
-| **POST** | `/api/auth/signout` | Invalidates and revokes active refresh tokens |
+Start the backend:
 
-### Library Management *(Requires Authorization)*
+dotnet run
 
-| Method | Endpoint | Description |
-| :--- | :--- | :--- |
-| **GET** | `/api/books` | Fetches complete book collection |
-| **GET** | `/api/books/{id}` | Fetches details for an isolated record |
-| **POST** | `/api/books` | Registers a new library entity |
-| **PUT** | `/api/books/{id}` | Mutates properties on a specific library entity |
-| **DELETE** | `/api/books/{id}` | Completely drops a target library record |
+The API will be available at the URL shown in the terminal.
 
-> 💡 **Payload Note:** The `POST /api/books` gateway requires payload structures formatted as `multipart/form-data` to accommodate processing text fields (`Title`, `Author`, `YearPublished`) alongside binary asset uploads (`Poster`).
+Swagger is available when running in the Development environment.
 
----
+🎨 Frontend Setup
 
-## 🖼️ Book Cover Storage
+Open a new terminal and navigate to the frontend:
 
-To optimize relational database space, binary image payloads bypass the database entirely.
+cd frontend
 
-```text
-[Form Data] ──► .NET Controller ──► Saved to Amazon S3 (Returns Object Key)
-                                 └──► Key saved in SQL Server [PosterKey]
-```
+Install dependencies:
 
-When fetching books via UI views, the backend generates an optimized **Pre-signed URL** with a fixed expiration window. This enables you to maintain an entirely locked-down, private cloud storage container while rendering images securely to authenticated actors.
+npm install
 
----
+Start the development server:
 
-## ☁️ AWS Lambda Integration
+npm run dev
 
+The Vite development server will provide the URL for the frontend application.
+
+Available Scripts
+Start development server
+npm run dev
+Build for production
+npm run build
+Preview production build
+npm run preview
+Run ESLint
+npm run lint
+🔐 Authentication Flow
+
+Authentication is handled using AWS Cognito.
+
+The general authentication flow is:
+
+User
+ │
+ │ Sign Up / Sign In
+ ▼
+React Frontend
+ │
+ │ POST /api/auth/signin
+ ▼
+ASP.NET Core API
+ │
+ │ AWS SDK
+ ▼
+AWS Cognito
+ │
+ │ Access Token
+ │ Refresh Token
+ ▼
+ASP.NET Core API
+ │
+ │ JWT
+ ▼
+React Frontend
+
+Once authenticated, the frontend sends the access token with requests to protected endpoints:
+
+Authorization: Bearer <access-token>
+
+The Books API is protected using JWT Bearer authentication.
+
+📚 API Endpoints
+Authentication
+Method	Endpoint	Description
+POST	/api/auth/signup	Register a new user
+POST	/api/auth/signin	Sign in a user
+POST	/api/auth/refresh	Refresh an access token
+POST	/api/auth/signout	Revoke a refresh token
+Books
+
+All book endpoints require authentication.
+
+Method	Endpoint	Description
+GET	/api/books	Get all books
+GET	/api/books/{id}	Get a book by ID
+POST	/api/books	Create a new book
+PUT	/api/books/{id}	Update a book
+DELETE	/api/books/{id}	Delete a book
+Creating a Book
+
+The create endpoint accepts multipart/form-data so that book information and an optional cover image can be submitted together.
+
+Example fields:
+
+Title
+Author
+YearPublished
+Poster
+
+The cover image is uploaded to Amazon S3 and the S3 object key is stored with the book record.
+
+🖼️ Book Cover Storage
+
+Book cover images are stored in Amazon S3 rather than directly in the SQL Server database.
+
+When a book is created:
+
+React Frontend
+      │
+      │ Upload cover
+      ▼
+ASP.NET Core API
+      │
+      │ Upload image
+      ▼
+Amazon S3
+      │
+      │ Return object key
+      ▼
+SQL Server
+      │
+      │ Store PosterKey
+      ▼
+Book Record
+
+When books are retrieved, the API generates a temporary pre-signed URL for each cover image.
+
+This allows the S3 bucket to remain private while still allowing authenticated users to view book covers.
+
+☁️ AWS Lambda
+
+The ASP.NET Core API includes support for running on AWS Lambda using:
+
+Amazon.Lambda.AspNetCoreServer.Hosting
+
+The API is configured with:
+
+builder.Services.AddAWSLambdaHosting(LambdaEventSource.HttpApi);
+
+This allows the API to be deployed as a serverless application and exposed through an HTTP API.
+
+A possible production architecture is:
+
+React Frontend
+      │
+      ▼
+API Gateway
+      │
+      ▼
+AWS Lambda
+      │
+      ├──────────────► AWS Cognito
+      │
+      ├──────────────► Amazon S3
+      │
+      └──────────────► SQL Server
+🔒 Security Considerations
+
+Before deploying this application to production:
+
+Do not commit Cognito client secrets to Git.
+Do not commit database credentials to Git.
+Store secrets using environment variables or AWS Secrets Manager.
+Keep the S3 bucket private.
+Use IAM policies with the minimum required permissions.
+Use HTTPS in production.
+Configure appropriate CORS policies.
+Consider validating uploaded file types and file sizes.
+Use production-specific configuration instead of development settings.
+Rotate exposed credentials immediately if they have ever been committed to a public repository.
+🔮 Future Improvements
+
+Potential improvements for the project include:
+
+Add pagination to the Books API
+
+Add server-side search
+
+Add server-side sorting
+
+Add book categories and genres
+
+Add ISBN support
+
+Add author profiles
+
+Add user-specific book collections
+
+Add reading status tracking
+
+Add ratings and reviews
+
+Add automated tests
+
+Add CI/CD with GitHub Actions
+
+Deploy the frontend to AWS
+
+Deploy the API to AWS Lambda and API Gateway
+
+Move application secrets to AWS Secrets Manager
+
+Add structured logging and monitoring
+
+📄 License
+
+This project is for educational and personal development purposes.
